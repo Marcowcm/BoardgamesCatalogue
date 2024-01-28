@@ -2,7 +2,7 @@
 $(document).ready(function(){   
     $.ajax({ 
     type: 'GET', 
-    url: '../data.json', 
+    url: 'static/data.json', 
     dataType: 'json',
     success: function (data) { 
         for (var i = 0; i < data.length; i++) {
