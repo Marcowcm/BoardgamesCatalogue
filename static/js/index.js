@@ -2,7 +2,7 @@
 $(document).ready(function(){   
     $.ajax({ 
     type: 'GET', 
-    url: 'https://sheetdb.io/api/v1/z0s8q3hocr77j', 
+    url: '../data.json', 
     dataType: 'json',
     success: function (data) { 
         for (var i = 0; i < data.length; i++) {
