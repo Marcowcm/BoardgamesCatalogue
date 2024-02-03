@@ -5,13 +5,15 @@ $(document).ready(function(){
     url: 'static/data.json', 
     dataType: 'json',
     success: function (data) { 
-        games = data  
+        games = data;
+        renderGames(games);
     }})
-    renderGames(games)
+    renderGames(games);
 })
 
 function renderGames(data){
-    console.log("it works")
+    console.log(data);
+    console.log(games);
     for (var i = 0; i < data.length; i++) {
             var html = `<div class="col s12 m6 l4"> 
                         <div class="card horizontal"> 
