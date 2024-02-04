@@ -72,7 +72,7 @@ function renderFilters() {
 
 function filter() {
     var slice = [];
-    if (selectedCat.length = 0) {
+    if (selectedCat.length == 0) {
         slice = games
     } else {
         games.forEach(game => {
