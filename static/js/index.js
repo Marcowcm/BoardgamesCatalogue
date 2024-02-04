@@ -1,5 +1,6 @@
 var games   
 $(document).ready(function(){
+    $('.sidenav').sidenav();
     $.ajax({ 
     type: 'GET', 
     url: 'static/data.json', 
@@ -12,10 +13,12 @@ $(document).ready(function(){
 
 function renderGames(data){
     for (var i = 0; i < data.length; i++) {
+        img_path = data[i].IMG===""?'default.png':data[i].IMG
+
             var html = `<div class="col s12 m6 l4"> 
                         <div class="card horizontal"> 
                             <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="static/${( data[i].IMG= "")?"IMG/default.png":data[i].IMG}"> 
+                                <img class="activator" src="static/IMG/ ${img_path}> 
                             </div>
                             <div class="">
                                 <div class="card-content">

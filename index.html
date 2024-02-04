@@ -16,10 +16,62 @@
               
 </head>
 <body>
+  <nav class="green lighten-2">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Boardgame</a>
+    </div>
+    <div class="nav-content">
+      <ul>
+        <li><p>search:</p></li>
+        <li>
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
+        </li>
+        <li><a href="#" data-target="filters" class="sidenav-trigger"><i class="material-icons">tune</i></a></li>
+      </ul> 
+    </div>
+  </nav>
+
+  <ul class="sidenav container" id="filters">
+    <li class="sidenav-header">
+      <div class="row">
+        <div class="container">
+        <h4 class="title">Filters</h4>
+      </div>
+    </div>
+    <li>
+      <form class="container" action="#">
+      <p>
+        <label>
+          <input type="checkbox" />
+          <span>Red</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="checkbox" checked="checked" />
+          <span>Yellow</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="checkbox" class="filled-in" checked="checked" />
+          <span>Filled in</span>
+        </label>
+      </p>
+    </form>
+  </li>
+  </ul>
+
     <div class="section container">
         <div class="row" id="catelogue">  
 
         </div>
     </div>
-    
+  
 </body>
