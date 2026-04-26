@@ -13,6 +13,7 @@ var categories = ["Deck building",
 var selectedCat = []
 $(document).ready(function () {
     $('.sidenav').sidenav();
+    $('.collapsible').collapsible();
     renderFilters();
     $.ajax({
         type: 'GET',
@@ -23,16 +24,29 @@ $(document).ready(function () {
             renderGames(filter());
         }
     })
+    $('#search').on("keyup", function () {
+        $('.collapsible').each(function () {
+            var search= $('#search').val()
+            if ($(this).text().search(search) > 0){
+                $(this).parent().fadeIn()
+            }else{
+                $(this).parent().fadeOut()
+            }
+	    if (search == ""){
+                $(this).parent().fadeIn()
+            }
+        })
+
+    })
 })
 
 function renderGames(data) {
     for (var i = 0; i < data.length; i++) {
         img_path = data[i].IMG === "" ? 'default.png' : data[i].IMG
 
-        var html = `<div class="col s12 m6 l4"> 
-                        <div class="card"> 
+        var html = `<div class="card col s12 m6 l4 collapsible">  
                             <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="static/IMG/${img_path}"> 
+                                <img class="activator game-img" src="static/IMG/${img_path}"> 
                             </div>
                             <div class="">
                                 <div class="card-content">
@@ -51,17 +65,17 @@ function renderGames(data) {
                                 <p>${data[i].Description}</p>
                                 <a href="${data[i].BGG}">See on BGG</a>
                             </div>
-                        </div>
-                        </div>`
+                    </div>`
         $('#catelogue').append(html);
     }
 }
+
 function renderFilters() {
     for (var i = 0; i < categories.length; i++) {
         var html = `
         <p>
             <label>
-            <input type="checkbox" class="filled-in"/>
+            <input type="checkbox" class="filled-in" id="${categories[i]}"/>
             <span>${categories[i]}</span>
             </label>
         </p>
@@ -85,3 +99,4 @@ function filter() {
     }
     return slice
 }
+
