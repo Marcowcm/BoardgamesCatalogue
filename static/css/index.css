@@ -1,4 +1,168 @@
-.game-img{
-    width: 300px;
-    height: 300px;
+body {
+    /* A deep slate color */
+    background-color: #1e272e; 
+    /* Soft mesh gradient for depth */
+    background-image: radial-gradient(at 0% 0%, rgba(96, 125, 139, 0.2) 0, transparent 50%), 
+                      radial-gradient(at 50% 0%, rgba(30, 39, 46, 1) 0, transparent 50%);
+    background-attachment: fixed;
+    color: #f5f5f5; /* Light text so it's readable on dark bg */
+}
+
+/* Adjust your cards to stand out on the dark background */
+.boardgame-card {
+    background-color: #2f3640 !important;
+    color: white !important;
+}
+
+.reveal-content {
+    background-color: #2f3640;
+    border-top: 1px solid #3d4652 !important;
+}
+nav {
+    background: linear-gradient(to right, 
+      rgba(96, 125, 139, 1) 0%, 
+      rgba(96, 125, 139, 0.8) 50%, 
+      rgba(96, 125, 139, 0) 95%
+    );
+    
+  }
+.brand-logo{
+    font: Georgia,5rem;
+}
+.card-image {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* The Overlay styling we built earlier */
+  .card-overlay-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    color: white;
+    z-index: 2;
+  }
+  
+  /* Fix for the card-reveal height and scroll */
+  .card-reveal {
+    padding: 20px !important;
+    overflow-y: auto !important;
+  }
+  
+  /* Your hover effect remains the same */
+  .card {
+    transition: transform 0.3s ease;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    z-index: 5;
+  }
+  /* Ensure the image takes up the full card space */
+  .game-img {
+    display: block;
+    border-radius: 2rem;
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    object-fit: contain;
+  }
+  
+@media only screen and (min-width: 993px) {
+.container {
+    width: 80%; /* Default is 70% or 85% */
+    max-width: 1800px; /* Prevents it from getting absurdly wide on ultra-wide monitors */
+  }
+}
+.card {
+	transition: transform 0.3s ease-in-out; /* Makes the transition smooth */
+    cursor: pointer;
+    min-width: 300px; /* Optional: changes cursor to a hand to indicate interactivity */
+	border-radius: .6rem;
+	display: inline-block;
+	box-shadow: 0px 0px 0.8rem rgba(0,0,0,0.15);
+	background-color: rgba(255, 255, 255);
+	
+}
+.card:hover {
+    /* Scale 1.05 represents a 5% increase in size */
+    transform: scale(1.05);
+    
+    /* Optional: Enhance the shadow on hover for a "lifting" effect */
+    z-index: 10; /* Ensures the enlarging card stays on top of neighbors */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card .content {
+	padding: 1.5rem;
+	height: calc(30rem - 13rem);
+	padding-top: .5rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.modal {
+    width: 95vw !important;
+    height: 90vh !important;
+    max-height: 90vh !important;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.modal-flex-wrapper {
+    display: flex;
+    flex-direction: column; /* Stacked like Instagram */
+    height: 100%;
+}
+
+.modal-image-container {
+    flex: 0 1 auto; 
+    background: #000;
+    text-align: center;
+}
+
+.modal-image-container img {
+    width: 100%;
+    height: 100%;
+    max-height: 40vh;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.modal-info-container {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+/* 2. Large Screen Override (Facebook Style) */
+@media only screen and (min-width: 993px) {
+    .modal {
+        width: 80vw !important;
+        height: 60vh !important;
+        max-height: 60vh !important;
+    }
+
+    .modal-flex-wrapper {
+        flex-direction: row;
+    }
+
+    .modal-image-container {
+        flex: 0 0 60%; 
+        height: 100%;
+    }
+    
+    .modal-image-container img {
+        max-height: 100%; /* Fill the 60vh height on desktop */
+        width: 100%;
+    }
+
+    .modal-info-container {
+        flex: 0 0 40%;
+    }
 }
