@@ -26,6 +26,10 @@ nav {
     );
     
   }
+.sidenav{
+    background-color: #163248; 
+    color: #f5f5f5;
+}
 .brand-logo{
     font: Georgia,5rem;
 }

@@ -70,11 +70,12 @@ function renderGames(data) {
                     <img class="game-img" src="static/IMG/${img_path}">
                     <div class="card-overlay-content">
                         <h5 class="card-title-overlay">${name}</h5>
-                        <p class="card-stats-overlay">Player: ${data[i].players_min}~${data[i].players_max} | Est: ${data[i].Est_Duration}m</p>
                     </div>
                 </div>
                 <div class="reveal-content" style="display: none; padding: 20px; border-top: 1px solid #eee;">
                     <p><strong>Full Name:</strong> ${data[i].Name_eng} ${data[i].Name_zh}</p>
+                    <p>Player: ${data[i].players_min}~${data[i].players_max}</p>
+                    <p>Est. Time: ${data[i].Est_Duration}</p>
                     <p><strong>Language:</strong> ${data[i].Lang}</p>
                     <p><strong>Category:</strong> ${data[i].Category}</p>
                     <p>${data[i].Description}</p>
